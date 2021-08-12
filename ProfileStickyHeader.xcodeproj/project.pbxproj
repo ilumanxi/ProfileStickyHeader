@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		263955BA26C4C0FE009958E0 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263955B926C4C0FE009958E0 /* TabBarButton.swift */; };
+		263955BC26C4C29A009958E0 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263955BB26C4C29A009958E0 /* ImageView.swift */; };
 		26558CCE26C375AA008B76D4 /* ProfileStickyHeaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26558CCD26C375AA008B76D4 /* ProfileStickyHeaderApp.swift */; };
 		26558CD026C375AA008B76D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26558CCF26C375AA008B76D4 /* ContentView.swift */; };
 		26558CD226C375AA008B76D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26558CD126C375AA008B76D4 /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		263955B926C4C0FE009958E0 /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
+		263955BB26C4C29A009958E0 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		26558CCA26C375AA008B76D4 /* ProfileStickyHeader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProfileStickyHeader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26558CCD26C375AA008B76D4 /* ProfileStickyHeaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStickyHeaderApp.swift; sourceTree = "<group>"; };
 		26558CCF26C375AA008B76D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 				26558CCD26C375AA008B76D4 /* ProfileStickyHeaderApp.swift */,
 				26558CCF26C375AA008B76D4 /* ContentView.swift */,
 				26558CDB26C3761D008B76D4 /* Home.swift */,
+				263955B926C4C0FE009958E0 /* TabBarButton.swift */,
+				263955BB26C4C29A009958E0 /* ImageView.swift */,
 				26558CD126C375AA008B76D4 /* Assets.xcassets */,
 				26558CD326C375AA008B76D4 /* Preview Content */,
 			);
@@ -140,7 +146,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				263955BC26C4C29A009958E0 /* ImageView.swift in Sources */,
 				26558CD026C375AA008B76D4 /* ContentView.swift in Sources */,
+				263955BA26C4C0FE009958E0 /* TabBarButton.swift in Sources */,
 				26558CDC26C3761D008B76D4 /* Home.swift in Sources */,
 				26558CCE26C375AA008B76D4 /* ProfileStickyHeaderApp.swift in Sources */,
 			);

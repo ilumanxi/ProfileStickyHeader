@@ -45,8 +45,9 @@ struct Home: View {
             }
             .padding()
             .background(.bar)
-            .overlay(
-                //  logic is when the pcker reaches the header Bottom then were sticking the picker to header...
+            // Sinece we need bottom value...
+            .overlay(alignment: .bottom) {
+                //  logic is when the picker reaches the header Bottom then were sticking the picker to header...
                 GeometryReader { proxy -> Color in
                     
                     let minY = proxy.frame(in: .global).minY
@@ -60,10 +61,7 @@ struct Home: View {
                     return .clear
                 }
                 .frame(width: 0, height: 0)
-                
-                // Sinece we need bottom value...
-                ,alignment: .bottom
-            )
+            }
                 
             
             ScrollView(.vertical, showsIndicators: false) {
@@ -153,27 +151,30 @@ struct Home: View {
                     // Edit Profile Button...
                     
                     HStack(spacing: 10) {
-                        Text("Edit Profile")
-                            .fontWeight(.semibold)
-                            .foregroundColor(.primary)
-                            .padding(.vertical, 10)
-                            .frame(maxWidth: .infinity)
-                            .background(
-                                
-                                RoundedRectangle(cornerRadius: 4)
-                                    .stroke(Color.gray)
+                        Button(action: {}) {
+                            Text("Edit Profile")
+                                .fontWeight(.semibold)
+                                .foregroundColor(.primary)
+                                .padding(.vertical, 10)
+                                .frame(maxWidth: .infinity)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 4)
+                                        .stroke(Color.gray)
                             )
+                        }
                         
-                        Text("Promotion's")
-                            .fontWeight(.semibold)
-                            .foregroundColor(.primary)
-                            .padding(.vertical, 10)
-                            .frame(maxWidth: .infinity)
-                            .background(
-                                
-                                RoundedRectangle(cornerRadius: 4)
-                                    .stroke(Color.gray)
+                        Button(action: {}) {
+                            Text("Promotion's")
+                                .fontWeight(.semibold)
+                                .foregroundColor(.primary)
+                                .padding(.vertical, 10)
+                                .frame(maxWidth: .infinity)
+                                .background(
+                                    
+                                    RoundedRectangle(cornerRadius: 4)
+                                        .stroke(Color.gray)
                             )
+                        }
                     }
                     .padding([.horizontal, .top])
                     
@@ -217,13 +218,13 @@ struct Home: View {
                             }
                             //  Max  Frame...
                             // Conisered as padding...
-                            .frame(height: 70, alignment: .bottom)
+                            .frame(height: 60, alignment: .bottom)
                             .background(colorScheme == .dark ? .black : .white)
                                 .offset(y: offset < 0 ? -offset : 0)
                             
                         )
                     }
-                    .frame(height: 70)
+                    .frame(height: 60)
                     //  Moving View to top...
                     .zIndex(4)
 
@@ -252,26 +253,7 @@ struct Home: View {
     }
 }
 
-struct ImageView: View {
-    
-    let color: Color
-    let width: CGFloat
-    
-    var body: some View {
-        AsyncImage(url: URL(string: "https://example.com/icon.png")) { image in
-            image
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: width, height: 120)
-                // Image Problemm
-                // If use cornerradius it will solve.
-                .cornerRadius(0)
-        } placeholder: {
-            color
-                .frame(width: width, height: 120)
-        }
-    }
-}
+
 
 
 extension Color {
@@ -285,49 +267,7 @@ extension Color {
 }
 
 
-struct TabBarButton: View {
-    
-    var image: String
-    //  Since we're having asset Image...
-    var isSystemImage: Bool
-    var animation: Namespace.ID
-    @Binding var selectedTab: String
-    
-    var body: some View {
-        Button(action: {
-            withAnimation(.easeInOut) {
-                selectedTab = image
-            }
-        }) {
-            VStack(spacing: 12) {
-                (
-                    isSystemImage ? Image(systemName: image) : Image(image)
-                )
-                    .renderingMode(.template)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 28, height: 28)
-                    .foregroundColor(selectedTab == image ? .primary : .gray)
 
-                ZStack {
-
-                    if selectedTab == image {
-                        Rectangle()
-                            .fill(.primary)
-                        // For Smooth sliding effect...
-                            .matchedGeometryEffect(id: "Tab", in: animation)
-                    }
-                    else {
-                        Rectangle()
-                            .fill(.clear)
-                    }
-                }
-                .frame(height: 1)
-            }
-            
-        }
-    }
-}
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
